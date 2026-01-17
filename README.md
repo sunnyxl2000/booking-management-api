@@ -20,7 +20,6 @@ A simple Booking Management REST API built with ASP.NET Core following Clean Arc
 ## How to Run Locally
 
 ### 1. Start SQL Server with Docker
-```bash
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=StrongPwd123!" \
 -p 1433:1433 --name booking-sql -d mcr.microsoft.com/mssql/server:2022-latest
 
@@ -29,16 +28,16 @@ dotnet ef database update \
   --project Booking.Infrastructure \
   --startup-project Booking.Api
 
-  ### 3. Run the API
+### 3. Run the API
   dotnet run --project Booking.Api
 
-  ### 4. Open Swagger
+### 4. Open Swagger
   https://localhost:{port}/swagger
 
-  ## Running Tests
+### Running Tests
   dotnet test
 
-Features
+## Features
 
 Create bookings
 
