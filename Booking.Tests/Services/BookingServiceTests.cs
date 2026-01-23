@@ -49,5 +49,11 @@ namespace Booking.Tests.Services
             result.Should().Contain(b => b.CustomerName == "User 1");
             result.Should().Contain(b => b.CustomerName == "User 2");
         }
+        [Fact]
+        public void CI_Should_Fail_Purposely()
+        {
+            // This test is intended to fail to demonstrate CI failure handling
+            Assert.True(false, "This test fails intentionally.");
+        }
     }
 }
