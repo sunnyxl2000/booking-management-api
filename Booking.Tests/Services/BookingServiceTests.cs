@@ -53,6 +53,7 @@ namespace Booking.Tests.Services
         public void CI_Should_Fail_Purposely()
         {
             // This test is intended to fail to demonstrate CI failure handling
+
             Assert.True(false, "This test fails intentionally.");
         }
     }
