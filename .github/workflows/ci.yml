@@ -1,0 +1,36 @@
+name: CI - Booking API
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取代码
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # 2. 安装 .NET 8
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # 3. 还原依赖
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # 4. 编译
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      # 5. 跑测试
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release
